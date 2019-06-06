@@ -30,6 +30,10 @@ public class Application {
         config.getNetworkConfig().getJoin().getEurekaConfig()
               .setEnabled(true)
               .setProperty("self-registration", "true")
+              .setProperty("use-classpath-eureka-client-props", "false")
+              .setProperty("shouldUseDns", "false")
+              .setProperty("name", "blag")
+              .setProperty("serviceUrl.default", "http://localhost:8761/eureka/")
               .setProperty("namespace", "hazelcast");
         return config;
     }

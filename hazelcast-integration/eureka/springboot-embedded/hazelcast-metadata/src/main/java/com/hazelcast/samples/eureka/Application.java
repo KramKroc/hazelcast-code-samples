@@ -31,7 +31,11 @@ public class Application {
         config.getNetworkConfig().getJoin().getEurekaConfig()
               .setEnabled(true)
               .setProperty("self-registration", "true")
+              .setProperty("use-classpath-eureka-client-props", "false")
               .setProperty("namespace", "hazelcast")
+              .setProperty("name", "blag")
+              .setProperty("shouldUseDns", "false")              
+              .setProperty("serviceUrl.default", "http://localhost:8761/eureka/")              
               .setProperty("use-metadata-for-host-and-port", "true");
         return config;
     }
